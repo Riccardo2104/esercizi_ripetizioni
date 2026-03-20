@@ -4,6 +4,15 @@ public class Concessionario {
 private String nome_concessionario;
 private String indirizzo;
 private ArrayList<Veicoli> elenco_veicoli = new ArrayList<>();
+
+// overloading concessionario
+public Concessionario(String nome_concessionario, String indirizzo) {
+        this.nome_concessionario = nome_concessionario;
+        this.indirizzo = indirizzo;
+
+}
+
+
 public Concessionario(String nome_concessionario, String indirizzo, ArrayList<Veicoli> veicoli) {
     this.nome_concessionario = nome_concessionario;
     this.indirizzo = indirizzo;
