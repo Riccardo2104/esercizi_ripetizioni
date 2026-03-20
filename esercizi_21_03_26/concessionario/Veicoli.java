@@ -5,9 +5,9 @@ public abstract class Veicoli {
     /*siccome la traccia dice esplicitamente che i veicoli hanno un anno di immatricolazione o dovuto considerare
     che abbiamo una targa
      */
-    private int valore;
-    private Year anno_immatricolazione;
-    private String targa;
+    protected int valore;
+    protected Year anno_immatricolazione;
+    protected String targa;
 
 
     public Veicoli(int valore, Year anno_immatricolazione, String targa){
@@ -22,15 +22,5 @@ public abstract class Veicoli {
     // metodo per calcolare il prezzo getter
 
 
-    public int getValore() {
-        return valore;
-    }
 
-    public Year getAnno_immatricolazione() {
-        return anno_immatricolazione;
-    }
-
-    public String getTarga() {
-        return targa;
-    }
 }
