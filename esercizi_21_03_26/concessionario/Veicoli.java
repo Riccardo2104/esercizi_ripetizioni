@@ -10,12 +10,6 @@ public abstract class Veicoli {
 
     // metodi
 
-    public abstract int getPrezzo();
-    public abstract int calcolo_anni();
-    public abstract int costo_assicurazione();
-
-
-
 
 
 }
