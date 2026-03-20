@@ -20,9 +20,9 @@ public Concessionario(String nome_concessionario, String indirizzo, ArrayList<Ve
 
 }
 
-public  int valore_inventario(ArrayList<Veicoli> elenco_veicoli) {
+public  double valore_inventario(ArrayList<Veicoli> elenco_veicoli) {
         // devo moltiplicare il prezzo aggiornato*tutte le macchine che ho
-    int somma_prezzi = 0;
+    double somma_prezzi = 0;
     for (Veicoli veicolo_n_esimo : elenco_veicoli) {
         somma_prezzi = veicolo_n_esimo.getValore() + somma_prezzi;
     }
