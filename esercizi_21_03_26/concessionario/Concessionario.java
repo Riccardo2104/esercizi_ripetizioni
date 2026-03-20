@@ -20,7 +20,7 @@ public Concessionario(String nome_concessionario, String indirizzo, ArrayList<Ve
 
 }
 
-public  double valore_inventario(ArrayList<Veicoli> elenco_veicoli) {
+public  double valore_inventario() {
         // devo moltiplicare il prezzo aggiornato*tutte le macchine che ho
     double somma_prezzi = 0;
     for (Veicoli veicolo_n_esimo : elenco_veicoli) {
@@ -33,6 +33,8 @@ public Boolean aggiungi_veicolo(Veicoli veicolo) {
     elenco_veicoli.add(veicolo);
     return true;
 }
+
+
 
 
 }
