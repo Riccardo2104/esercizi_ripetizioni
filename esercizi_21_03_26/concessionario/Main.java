@@ -6,8 +6,8 @@ public class Main {
 
         Year anno_immatricolazione = Year.of(2004);
         Auto auto_1 = new Auto(2000,anno_immatricolazione,"FX234TR", "Ford Fiesta");
-        System.out.println(auto_1.getValore());
-        System.out.println(auto_1.get_eta());
+
+        System.out.println("Valore della macchina " + String.format("%.2f",auto_1.getValore()));
 
 
 
