@@ -24,7 +24,7 @@ public  int valore_inventario(ArrayList<Veicoli> elenco_veicoli) {
         // devo moltiplicare il prezzo aggiornato*tutte le macchine che ho
     int somma_prezzi = 0;
     for (Veicoli veicolo_n_esimo : elenco_veicoli) {
-        somma_prezzi = veicolo_n_esimo.prezzo_base + somma_prezzi;
+        somma_prezzi = veicolo_n_esimo.getValore() + somma_prezzi;
     }
     return  somma_prezzi;
 }
