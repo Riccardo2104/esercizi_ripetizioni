@@ -1,19 +1,19 @@
 import java.time.Year;
 
 public abstract class Veicoli {
-    private int prezzo_base;
-    private Year anno_immatricolazione ;
-    private int costo_assicurazione;
-    private String tipo_veicolo;
+
+    /*siccome la traccia dice esplicitamente che i veicoli hanno un anno di immatricolazione o dovuto considerare
+    che abbiamo una targa
+     */
+    private int valore;
+    private Year anno_immatricolazione;
+    private String targa;
 
 
-
-    // voglio creare un veicolo senza usare classe padre
-
-    public Veicoli(int prezzo_base, Year anno_immatricolazione, int costo_assicurazione) {
-        this.prezzo_base = prezzo_base;
+    public Veicoli(int valore, Year anno_immatricolazione, String targa){
+        this.valore = valore;
         this.anno_immatricolazione = anno_immatricolazione;
-        this.costo_assicurazione = costo_assicurazione;
+        this.targa = targa;
     }
 
 
@@ -21,21 +21,16 @@ public abstract class Veicoli {
 
     // metodo per calcolare il prezzo getter
 
-    public int getPrezzo_base(){
-        return  prezzo_base;
+
+    public int getValore() {
+        return valore;
     }
 
     public Year getAnno_immatricolazione() {
-        return  anno_immatricolazione;
+        return anno_immatricolazione;
     }
 
-
-    public int getCosto_assicurazione() {
-        return costo_assicurazione;
+    public String getTarga() {
+        return targa;
     }
-
-
-
-
-
 }
