@@ -23,7 +23,7 @@ public class Auto extends Veicoli {
 
 
     // lo spostato perchè diceva che è ricorsvo
-    int valore_pre_deprezzamento = this.getValore();
+    int valore_pre_deprezzamento = super.getValore();
     @Override
     public int getValore() {
         // per veicoli non elettrici
@@ -41,7 +41,7 @@ public class Auto extends Veicoli {
         } else { // senza tipo elettrico
             for (int i = 0; i < eta; i++) {
 
-                valore_pre_deprezzamento = valore_pre_deprezzamento - valore_pre_deprezzamento * tasso;
+                valore_pre_deprezzamento = valore_pre_deprezzamento - (valore_pre_deprezzamento * tasso);
             }
             return  valore_pre_deprezzamento;
         }
