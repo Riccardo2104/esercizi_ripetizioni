@@ -9,7 +9,7 @@ public abstract class Veicoli {
     private Year anno_immatricolazione;
     private String targa;
     private int costo_assicurazione;
-    private String tipo;
+
 
 
     public Veicoli(int valore, Year anno_immatricolazione, String targa){
@@ -50,9 +50,7 @@ public abstract class Veicoli {
         return targa;
     }
 
-    public String getTipo() {
-        return tipo;
-    }
+
 
     public int calcolo_costo_assicurazione() {
         int eta = this.get_eta();
