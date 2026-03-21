@@ -1,29 +1,32 @@
 import java.time.Year;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
-public abstract class Veicoli {
+public  class Veicoli {
 
     /*siccome la traccia dice esplicitamente che i veicoli hanno un anno di immatricolazione o dovuto considerare
     che abbiamo una targa
      */
     private int valore;
-    private Year anno_immatricolazione;
+    private LocalDate data_immatricolazione;
     private String targa;
     private int costo_assicurazione;
 
 
 
-    public Veicoli(int valore, Year anno_immatricolazione, String targa){
+    public Veicoli(int valore, String data_immatricolazione, String targa){
         this.valore = valore;
-        this.anno_immatricolazione = anno_immatricolazione;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.data_immatricolazione = LocalDate.parse(data_immatricolazione, formatter);
         this.targa = targa;
 
 
     }
-    public Veicoli(int valore, Year anno_immatricolazione, String targa, String tipo){
+    public Veicoli(int valore, String data_immatricolazione, String targa, String tipo){
         this.valore = valore;
-        this.anno_immatricolazione = anno_immatricolazione;
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+        this.data_immatricolazione = LocalDate.parse(data_immatricolazione, formatter);
         this.targa = targa;
-        this.tipo = tipo;
     }
 
     // metodi
@@ -35,16 +38,15 @@ public abstract class Veicoli {
         return valore;
     }
 
-    public Year getAnno_immatricolazione() {
-        return anno_immatricolazione;
+    public int getAnno_immatricolazione() {
+        return this.data_immatricolazione.getYear();
+
     }
 
     public int get_eta() {
-        int anno_immatricolazione_veicolo = this.getAnno_immatricolazione().getValue();
-        Year anno_corrente = Year.now();
-        // mi salvo un intero del anno coorente
-        int anno_corrente_intero = anno_corrente.getValue();
-        return anno_corrente_intero - anno_immatricolazione_veicolo;
+        int anno_immatricolazione = this.getAnno_immatricolazione();
+        int anno_corrente = LocalDate.now().getYear();
+        return anno_corrente - anno_immatricolazione;
     }
     public String getTarga() {
         return targa;
@@ -52,8 +54,45 @@ public abstract class Veicoli {
 
 
 
+
+
     public int calcolo_costo_assicurazione() {
         int eta = this.get_eta();
-        return eta*100;
+        int valore = this.valore;
+        int costo_assicurazione = eta * valore;
+
+        if (costo_assicurazione > 1000) {
+             return costo_assicurazione = 1000;
+        }
+        else {
+            return costo_assicurazione;
+        }
+
+    }
+
+
+
+
+
+
+    @Override
+    public boolean equals (Object other){
+        Veicoli o = null;
+        // verfico se il riferimento del ogetto su cui viene chiamato
+        if (this == other) return true;
+        if (other instanceof Veicoli) {
+            o = (Veicoli) other;
+        }
+        else {
+            return false;
+        }
+
+        return this.targa.equals(o.targa);
+    }
+
+
+    @Override
+    public String toString() {
+        return "Targa: " + this.targa + "," + " data_immatricolazione:" + this.data_immatricolazione + "," +" valore " + this.valore;
     }
 }

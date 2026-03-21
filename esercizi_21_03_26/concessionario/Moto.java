@@ -2,9 +2,9 @@ import java.time.Year;
 public class Moto extends Veicoli {
     private String nome_modello;
     int tasso_deprezzamento = 5 ;
-    public Moto(int valore, Year anno_immatricolazione, String targa, String nome_modello){
+    public Moto(int valore, String data_immatricolazione, String targa, String nome_modello){
 
-        super(valore,anno_immatricolazione,targa, nome_modello);
+        super(valore,data_immatricolazione,targa, nome_modello);
 
     }
 

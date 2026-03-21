@@ -6,8 +6,8 @@ public class Auto extends Veicoli {
     private Boolean is_eletric;
 
 
-    public Auto(int valore, Year anno_immatricolazione, String targa, String nome_modello) {
-        super(valore,anno_immatricolazione, targa);
+    public Auto(int valore, String data_immatricolazione, String targa, String nome_modello) {
+        super(valore,data_immatricolazione, targa);
 
 
     }
@@ -27,12 +27,11 @@ public class Auto extends Veicoli {
 
 // mettere il tipo come boolean
     // lo spostato perchè diceva che è ricorsvo
-    double valore_pre_deprezzamento = super.getValore();
     @Override
     public double getValore() {
         // per veicoli non elettrici
         int eta = this.get_eta();
-
+        double valore_pre_deprezzamento = super.getValore();
         int tasso = tasso_deprezzamento;
         // calcolo tipo elettrico
         if (this.getIs_eletric() && valore_pre_deprezzamento < 5000) {
