@@ -1,4 +1,4 @@
-package Smart_Home;
+package SmartHome;
 
 public class ReteWifi {
     // non si harcoda mai niente è per l'esercizio

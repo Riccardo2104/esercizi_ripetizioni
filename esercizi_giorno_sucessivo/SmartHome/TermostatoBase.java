@@ -1,4 +1,4 @@
-package Smart_Home;
+package SmartHome;
 
 public class TermostatoBase extends Dispositivo {
     private double consumo;

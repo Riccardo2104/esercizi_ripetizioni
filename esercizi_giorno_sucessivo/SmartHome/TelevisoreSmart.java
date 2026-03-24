@@ -1,4 +1,4 @@
-package Smart_Home;
+package SmartHome;
 
 public class TelevisoreSmart extends Dispositivo  implements  ConnettibileWifi{
     private final int consumo = 150;
@@ -6,6 +6,7 @@ public class TelevisoreSmart extends Dispositivo  implements  ConnettibileWifi{
 
     public TelevisoreSmart(String seriale) {
         super(seriale);
+
     }
 
 
@@ -21,7 +22,7 @@ public class TelevisoreSmart extends Dispositivo  implements  ConnettibileWifi{
     public boolean connettiDispositivo(String rete_wifi, String password) {
         // se nome e password corrispondo a quelli nella classe rete allora ti connetti
         ReteWifi rete = new ReteWifi();
-        return rete.verificaAuenticazione(rete_wifi, password) == true;
+        return rete.verificaAuenticazione(rete_wifi, password);
     }
 
 }

@@ -1,4 +1,4 @@
-package Smart_Home;
+package SmartHome;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -6,15 +6,15 @@ import java.util.Objects;
 
 public class GestoreSmartHome {
 
-    private ArrayList<Dispositivo> DispositiviinstallatiCasa = new ArrayList<>();
+    private ArrayList<Dispositivo> dispositiviinstallatiCasa = new ArrayList<>();
 
     public GestoreSmartHome(ArrayList<Dispositivo> dispositiviinstallatiCasa) {
-        DispositiviinstallatiCasa = dispositiviinstallatiCasa;
+        this.dispositiviinstallatiCasa = dispositiviinstallatiCasa;
     }
 
     public Boolean agggiungiDispositivo(Dispositivo device) {
-        if(!(DispositiviinstallatiCasa.contains(device))) {
-            DispositiviinstallatiCasa.add(device);
+        if(!(dispositiviinstallatiCasa.contains(device))) {
+            dispositiviinstallatiCasa.add(device);
             return  true;
         }
 
