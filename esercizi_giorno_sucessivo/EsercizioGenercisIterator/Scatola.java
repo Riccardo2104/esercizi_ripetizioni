@@ -1,9 +1,11 @@
 package EsercizioGenercisIterator;
 
 import java.util.ArrayList;
+import java.util.Iterator;
+
 
 public class Scatola<T extends Prodotto> {
-
+    public static int globalcounter = 0;
 
     private ArrayList<T> listaprodotti = new ArrayList<>();
 
@@ -29,12 +31,23 @@ public class Scatola<T extends Prodotto> {
 
     // voglio accedere ad
     public Boolean rimuoviDifettosi() {
-            for(T prodottonesimo: listaprodotti) {
-                if (prodottonesimo.isIsdifettoso()){
-                       return listaprodotti.remove(prodottonesimo);
-                }
+        int var = Scatola.globalcounter;
+        Iterator<T> cursore = listaprodotti.iterator();
+
+        while(cursore.hasNext()) {
+            T prodottoAttuale = cursore.next();
+            if (prodottoAttuale.isIsdifettoso()){
+                 cursore.remove();
+                  var = var +1;
+
             }
-            return false;
+        }
+        if (var != 0) {
+            return true;
+        }
+
+
+        return null;
     }
 
 
