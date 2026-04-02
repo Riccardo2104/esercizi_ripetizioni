@@ -1,8 +1,8 @@
 package GestioneFlotta;
 
-public class Monopattino  extends MezziTrasporto implements Ricaricabile{
-private final int costoManutenzione = 15;
-private final boolean isEletric;
+public class Monopattino extends MezziTrasporto implements Ricaricabile {
+    private final int costoManutenzione = 15;
+    private final boolean isEletric;
 
     public Monopattino(String targa, String modello) {
         super(targa, modello);
@@ -10,9 +10,8 @@ private final boolean isEletric;
     }
 
 
-
     public Monopattino(String targa, String modello, double kilometriPercorsi) {
-        super(targa, modello,  kilometriPercorsi);
+        super(targa, modello, kilometriPercorsi);
         this.isEletric = true;
     }
 
@@ -21,5 +20,12 @@ private final boolean isEletric;
         return this.costoManutenzione;
     }
 
-
+    @Override
+    public String toString() {
+        return
+                "targa='" + super.getTarga() + '\'' +
+                        ", modello='" + super.getModello() + '\'' +
+                        ", chilometriPercorsi=" + super.getChilometriPercorsi() + '\'' +
+                        ", Alimentazione=" + "Elettrica";
+    }
 }

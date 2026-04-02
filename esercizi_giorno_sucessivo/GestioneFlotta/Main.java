@@ -8,8 +8,7 @@ public class Main {
         /*creo un ogettto di floatta*/
         AziendaNoleggio gestioneFlotta = new AziendaNoleggio("PincoPallinosrl");
 
-
-        Furgone furgoneDisel1 = new Furgone("ZA123BC","Modello-ford",1000);
+        Furgone furgoneDisel1 = new Furgone("ZA123BC", "Modello-ford", 1000);
         Monopattino monopattino = new Monopattino("MONO01", "monolux-1");
         Monopattino monopattino2 = new Monopattino("MONO02", "monolux-1");
 
@@ -19,11 +18,11 @@ public class Main {
         veicoli.add(monopattino2);
         gestioneFlotta.aggiungiVeicoli(veicoli);
 
-       /*   ma il fatto che li abbia messi a mano in ricarica è un errore o devo fare un if che controllo se
-        *   l'oggetto implementasse la funzionalità?
-        *
-        *
-        *  */
+        /*   ma il fatto che li abbia messi a mano in ricarica è un errore o devo fare un if che controllo se
+         *   l'oggetto implementasse la funzionalità?
+         *
+         *
+         *  */
         monopattino.effetuaRicarcia(60);
         monopattino2.effetuaRicarcia(60);
         System.out.println(gestioneFlotta.calcolaSpesaTotaliFlotta());
@@ -31,7 +30,6 @@ public class Main {
         gestioneFlotta.cercaVeicoloPerTarga("FANTASMA");
 
     }
-
 
 
 }

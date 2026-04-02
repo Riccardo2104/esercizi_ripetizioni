@@ -24,16 +24,25 @@ public class Furgone extends MezziTrasporto {
 
     }
 
-    public Furgone(String targa, String modello,  double kilometriPercorsi) {
+    public Furgone(String targa, String modello, double kilometriPercorsi) {
         this.isdisel = true;
         super(targa, modello, kilometriPercorsi);
 
     }
 
 
-
     @Override
     public double CostoManutenzioneMensile() {
-        return this.baseCostoMensile + (costoAkilometro*super.getChilometriPercorsi());
+        return this.baseCostoMensile + (costoAkilometro * super.getChilometriPercorsi());
+    }
+
+    @Override
+    public String toString() {
+
+        return
+                "targa='" + super.getTarga() + '\'' +
+                        ", modello='" + super.getModello() + '\'' +
+                        ", chilometriPercorsi=" + super.getChilometriPercorsi() + '\'' +
+                        ", Alimentazione=" + "Disel";
     }
 }

@@ -3,12 +3,21 @@ package GestioneFlotta;
 import java.util.Objects;
 
 public abstract class MezziTrasporto {
-        private final String targa;
-        private  String modello;
-        private  double chilometriPercorsi;
+    private final String targa;
+    private String modello;
+    private double chilometriPercorsi;
 
+    /*
+    *
+     * eccezionalmente non lo uso per il prof ma è una soluzione che ha senso
+    * dice che eriditano qualcosa in più che agi ogetti non appartiene
+    /*
+    protected enum Alimentazione {
+        Disel,
+        Elettrica
 
-
+    }
+    */
     public MezziTrasporto(String targa, String modello) {
 
         if (targa.isEmpty()) {
@@ -38,9 +47,6 @@ public abstract class MezziTrasporto {
     public abstract double CostoManutenzioneMensile();
 
 
-
-
-
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof MezziTrasporto that)) return false;
@@ -51,8 +57,8 @@ public abstract class MezziTrasporto {
     public String toString() {
         return
                 "targa='" + targa + '\'' +
-                ", modello='" + modello + '\'' +
-                ", chilometriPercorsi=" + chilometriPercorsi;
+                        ", modello='" + modello + '\'' +
+                        ", chilometriPercorsi=" + chilometriPercorsi;
     }
 
     // getter and setter
@@ -67,10 +73,6 @@ public abstract class MezziTrasporto {
     public String getModello() {
         return modello;
     }
-
-
-
-
 
 
 }
