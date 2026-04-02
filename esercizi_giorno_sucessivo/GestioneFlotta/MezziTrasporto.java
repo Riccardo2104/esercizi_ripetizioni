@@ -9,6 +9,18 @@ public abstract class MezziTrasporto {
 
 
 
+    public MezziTrasporto(String targa, String modello) {
+
+        if (targa.isEmpty()) {
+            throw new IllegalArgumentException("Targa vuota non è possibile inserire una targa vuota");
+        }
+        this.targa = targa;
+        this.modello = modello;
+        this.chilometriPercorsi = 0.0;
+
+    }
+
+
     public MezziTrasporto(String targa, String modello, double chilometriPercorsi) {
 
         if (targa.isEmpty()) {
@@ -17,6 +29,7 @@ public abstract class MezziTrasporto {
         this.targa = targa;
         this.modello = modello;
         this.chilometriPercorsi = chilometriPercorsi;
+
     }
 
 
