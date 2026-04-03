@@ -41,7 +41,6 @@ public class Ristorante {
     public Boolean pagare(Double somma, Double mancia) {
         if( somma > 0) {
             transazionenumero += 1;
-            this.incassogiorno = somma;
             Scontrino scontrino = new Scontrino(somma, mancia, transazionenumero);
             scontrini.add(scontrino);
             return true;
