@@ -1,0 +1,46 @@
+package esercizi_02_04_26.GestioneFlotta.model;
+
+import esercizi_02_04_26.GestioneFlotta.domain.TipoAlimentazioneEnum;
+
+public class Furgone extends MezziTrasporto {
+    private final Double baseCostoMensile = 100.0;
+    private final double costoAkilometro = 0.05;
+    private final boolean isdisel = true;
+
+    /*o mi faccio un attributo generico chiamato alimentazione e metto nelle classe astratta mi faccio un setter con una
+    * stringa in cui viene indicato il tipo di alimentazione nella traccia ne ho o a disel o elettrici
+    * quindi non avendo
+    *
+    * oppure faccio tipo alimentazione come Boolean e lo setto true false o null ma il problema è
+        che alcuni ogetto non hanno un tipo di aliementazione e allora metto null però il true
+        *
+        * posso fare degli attributi astratti non definiti? in tutte e 3 le classi
+        *
+        *
+        *
+    *
+    * */
+    public Furgone(String targa, String modello) {
+        super(targa, modello);
+
+    }
+
+    public Furgone(String targa, String modello, double kilometriPercorsi) {
+        super(targa, modello, kilometriPercorsi);
+    }
+
+
+    @Override
+    public double CostoManutenzioneMensile() {
+        return this.baseCostoMensile + (costoAkilometro * super.getChilometriPercorsi());
+    }
+
+    @Override
+    public String toString() {
+        return
+                "targa='" + super.getTarga() + '\'' +
+                        ", modello='" + super.getModello() + '\'' +
+                        ", chilometriPercorsi=" + super.getChilometriPercorsi() + '\'' +
+                        ", Alimentazione=" + TipoAlimentazioneEnum.Disel;
+    }
+}
