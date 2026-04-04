@@ -58,6 +58,9 @@ public class Main {
         /*creo un dipendente  e provo ad aggiungerlo*/
         Competenza competenza1 = new Competenza("Contabilità",456);
 
+
+
+
         Set<Competenza> competenzemario = new HashSet<>();
         competenzemario.add(competenza1);
 

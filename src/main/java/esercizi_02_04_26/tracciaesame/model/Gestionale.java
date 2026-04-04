@@ -6,7 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
-public class Gestionale {
+public class Gestionale<?> {
 
 
     private String nomegestionale;
@@ -33,22 +33,21 @@ public class Gestionale {
         return  false;
     }
 
-    public ArrayList<Dipendente> cercaDipendentiPerSkill(Set<Competenza> competenze ) {
+    public boolean cercaDipendentiPerSkill(Set<Competenza> competenze ) {
         ArrayList<Dipendente> dipendentitrovatiperskill= new ArrayList<Dipendente>();
+        ArrayList<Competenza> competenzeset = new ArrayList<>();
+
+        competenzeset.addAll(competenze);
 
 
-        // se tra tutte le competenze presenti nei dipdente se almeno uno di quelle è contenuta nelle competenze
-        for(Competenza competenza : competenze) {
-            for (Dipendente dipendenteNesimo : dipendenti) {
-                if(dipendenteNesimo.getCompetenzepossedute().contains(competenza)) {
-                    dipendentitrovatiperskill.add(dipendenteNesimo);
-                }
-            }
+
+        for(Competenza competenzenesima : competenzeset) {
+           return true;
         }
-        if(!dipendentitrovatiperskill.isEmpty()) {
-            return dipendentitrovatiperskill;
-        }
-        return null;
+//        if(!dipendentitrovatiperskill.isEmpty()) {
+//            return dipendentitrovatiperskill;
+//        }
+       return false;
     }
 
 
