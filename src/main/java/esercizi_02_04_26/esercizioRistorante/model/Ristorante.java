@@ -95,13 +95,14 @@ public class Ristorante {
             return false;
     }
 
-    public void setPagafissa(Double pagafissa) {
-        this.pagafissa = pagafissa;
-    }
+   public Boolean redistribuisciMance() {
+        if (mancegiorno > 0) {
+            Double mancetotali = this.mancegiorno;
+            return true;
+        }
+        return  false;
 
-    public Double getPagafissa() {
-        return pagafissa;
-    }
+   }
 
 
     public List<Dipendenti> getDipendenti() {
@@ -114,6 +115,14 @@ public class Ristorante {
         }
     }
 
+    // setter and getter
+    public void setPagafissa(Double pagafissa) {
+        this.pagafissa = pagafissa;
+    }
+
+    public Double getPagafissa() {
+        return pagafissa;
+    }
 
 }
 

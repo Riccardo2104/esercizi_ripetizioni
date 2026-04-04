@@ -20,6 +20,9 @@ public class Dipendenti {
 
     }
 
+
+
+
     /*voglio lasciare la paga a final dopo   che l'oggetto è stato creato
     *
     *
