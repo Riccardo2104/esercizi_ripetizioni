@@ -95,6 +95,7 @@ public class Gestionale {
 
             for (Progetto progettonesimo : this.getProgettiGestionale()) {
                 writer.write(stringformatter.formattaStringa(progettonesimo) + "\n");
+                writer.flush();
             }
             return true;
 

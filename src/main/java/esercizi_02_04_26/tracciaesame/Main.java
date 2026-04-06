@@ -97,6 +97,8 @@ public class Main {
 //        } catch (IOException e) {
 //            throw new RuntimeException(e);
 //        }
+
+          System.out.print(gestionale.getProgettiGestionale());
         gestionale.generatxtreport();
 
         Set<Competenza> competenzesviluppatore = new HashSet<>();
