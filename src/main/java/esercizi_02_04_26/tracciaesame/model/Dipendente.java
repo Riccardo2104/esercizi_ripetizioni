@@ -50,6 +50,18 @@ public abstract class Dipendente {
     }
 
 
+    public Double getSommaBnusprogetti() {
+        Double sommaBnusprogetti = 0.0;
+
+        if(!proggettiacuipartecipa.isEmpty()) {
+            for(Progetto p  :this.getProggettiacuipartecipa()) {
+                sommaBnusprogetti = sommaBnusprogetti + p.getPercentualebonus();
+            }
+            return  sommaBnusprogetti;
+        }
+        return  null;
+    }
+
 
 
     //getter and setter
