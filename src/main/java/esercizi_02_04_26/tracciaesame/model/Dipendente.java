@@ -4,7 +4,6 @@ package esercizi_02_04_26.tracciaesame.model;
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Set;
 
@@ -18,8 +17,6 @@ public abstract class Dipendente {
     private Float stipendio;
     private Set<Competenza>  competenzepossedute;
     private long anniServizio;
-    private Progetto progetto;
-    private Double bonusprogetto;
     private List<Progetto> proggettiacuipartecipa;
 
     public Dipendente(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
@@ -31,8 +28,6 @@ public abstract class Dipendente {
         this.stipendio = ral/13;
         this.competenzepossedute = competenzepossedute;
         this.anniServizio = this.calcolaAnzianita();
-        this.progetto = null;
-        this.bonusprogetto = null;
         this.proggettiacuipartecipa = new ArrayList<>();
         this.ruolo = null;
     }
@@ -74,10 +69,6 @@ public abstract class Dipendente {
         return ral;
     }
 
-    public Double getBonusprogetto() {
-        return bonusprogetto;
-    }
-
     public Set<Competenza> getCompetenzepossedute() {
         return competenzepossedute;
     }
@@ -89,14 +80,6 @@ public abstract class Dipendente {
     //setter
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public void setBonusprogetto(Double bonusprogetto) {
-        this.bonusprogetto = bonusprogetto;
-    }
-
-    public void setProgetto(Progetto progetto) {
-        this.progetto = progetto;
     }
 
     protected  void setRuolo(String ruolo) {
