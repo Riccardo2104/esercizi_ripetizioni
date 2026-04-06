@@ -1,5 +1,8 @@
 package esercizi_02_04_26.tracciaesame.model;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
@@ -81,5 +84,20 @@ public class Gestionale {
 
     public List<Progetto> getProgettiGestionale() {
         return progetti;
+    }
+
+    public boolean generatxtreport() throws RuntimeException, IOException {
+        Stringformatter stringformatter = new Stringformatter();
+        BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Riccardo\\Documents\\ITS" +
+                "\\Basi di programmazione in Java e strumenti per lo sviluppo\\esercizi_autodidatta" +
+                "\\esercizi_ripetizioni" +
+                "\\src\\main\\java\\esercizi_02_04_26\\tracciaesame\\model\\output.txt"));
+
+            for (Progetto progettonesimo : this.getProgettiGestionale()) {
+                writer.write(stringformatter.formattaStringa(progettonesimo) + "\n");
+            }
+            return true;
+
+
     }
 }

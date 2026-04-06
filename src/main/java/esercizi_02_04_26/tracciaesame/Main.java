@@ -15,7 +15,7 @@ import java.util.Set;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         /*testing del bonus
             mi creo un insieme di comeptenze
@@ -84,20 +84,20 @@ public class Main {
 //        gestionale.assegnaProgetto(mario,progetto);
 
 
-        Stringformatter stringformatter = new Stringformatter();
-
-
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Riccardo\\Documents\\ITS" +
-                "\\Basi di programmazione in Java e strumenti per lo sviluppo\\esercizi_autodidatta" +
-                "\\esercizi_ripetizioni" +
-                "\\src\\main\\java\\esercizi_02_04_26\\tracciaesame\\model\\output.txt"))) {
-            for (Progetto progettonesimo : gestionale.getProgettiGestionale()) {
-                writer.write(stringformatter.formattaStringa(progettonesimo) + "\n");
-            }
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
+//        Stringformatter stringformatter = new Stringformatter();
+//
+//
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Riccardo\\Documents\\ITS" +
+//                "\\Basi di programmazione in Java e strumenti per lo sviluppo\\esercizi_autodidatta" +
+//                "\\esercizi_ripetizioni" +
+//                "\\src\\main\\java\\esercizi_02_04_26\\tracciaesame\\model\\output.txt"))) {
+//            for (Progetto progettonesimo : gestionale.getProgettiGestionale()) {
+//                writer.write(stringformatter.formattaStringa(progettonesimo) + "\n");
+//            }
+//        } catch (IOException e) {
+//            throw new RuntimeException(e);
+//        }
+        gestionale.generatxtreport();
 
         Set<Competenza> competenzesviluppatore = new HashSet<>();
         competenzesviluppatore.add(competenzaprogetto1n1);
