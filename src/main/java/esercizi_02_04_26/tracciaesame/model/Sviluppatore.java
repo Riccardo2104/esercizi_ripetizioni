@@ -15,7 +15,7 @@ public class Sviluppatore  extends  Dipendente{
     }
 
     @Override
-    public Float calcolaStipendio() {
+    public double calcolaStipendio() {
         return super.getRal() + super.getBonusprogetto() + super.calcolaAnzianita()*surplus;
     }
 

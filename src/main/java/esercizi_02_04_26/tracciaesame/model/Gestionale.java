@@ -66,7 +66,7 @@ public class Gestionale {
         Set <Competenza> competenzeDipendentePossedute = dipendente.getCompetenzepossedute();
         if(competenzeDipendentePossedute.containsAll(progetto.getCompetenzerichieste())) {
 
-            Integer percentualeBonusProgettoDaassegnare = progetto.getPercentualebonus();
+            Double percentualeBonusProgettoDaassegnare = progetto.getPercentualebonus();
             dipendente.setProgetto(progetto);
             dipendente.setBonusprogetto(progetto.getPercentualebonus());
 

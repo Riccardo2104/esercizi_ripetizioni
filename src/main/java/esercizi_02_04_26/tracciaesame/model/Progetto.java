@@ -12,9 +12,9 @@ public class Progetto {
     private LocalDate dataFine;
     private Set<Competenza> competenzerichieste;
     private Float budgetallocato;
-    private Integer percentualebonus;
+    private Double percentualebonus;
 
-    public Progetto(Integer codiceIdentificato, LocalDate dataInizio, LocalDate dataFine, Set<Competenza> competenzerichieste, Float budgetallocato, Integer percentualebonus) {
+    public Progetto(Integer codiceIdentificato, LocalDate dataInizio, LocalDate dataFine, Set<Competenza> competenzerichieste, Float budgetallocato, Double percentualebonus) {
 
 
         this.codiceIdentificato = codiceIdentificato;
@@ -54,7 +54,7 @@ public class Progetto {
         return budgetallocato;
     }
 
-    public Integer getPercentualebonus() {
+    public Double getPercentualebonus() {
         return percentualebonus;
     }
     //setter

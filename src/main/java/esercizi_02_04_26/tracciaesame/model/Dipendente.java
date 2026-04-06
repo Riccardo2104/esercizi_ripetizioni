@@ -1,8 +1,5 @@
 package esercizi_02_04_26.tracciaesame.model;
 
-import esercizi_02_04_26.tracciaesame.model.*;
-
-
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
@@ -19,7 +16,7 @@ public abstract class Dipendente {
     private Set<Competenza>  competenzepossedute;
     private long anniServizio;
     private Progetto progetto;
-    private Integer bonusprogetto;
+    private Double bonusprogetto;
 
     public Dipendente(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
         this.nome = nome;
@@ -37,7 +34,7 @@ public abstract class Dipendente {
 
 
 
-    public abstract Float calcolaStipendio();
+    public abstract double calcolaStipendio();
 
 
 
@@ -60,7 +57,7 @@ public abstract class Dipendente {
         return ral;
     }
 
-    public Integer getBonusprogetto() {
+    public Double getBonusprogetto() {
         return bonusprogetto;
     }
 
@@ -73,7 +70,7 @@ public abstract class Dipendente {
         this.nome = nome;
     }
 
-    public void setBonusprogetto(Integer bonusprogetto) {
+    public void setBonusprogetto(Double bonusprogetto) {
         this.bonusprogetto = bonusprogetto;
     }
 

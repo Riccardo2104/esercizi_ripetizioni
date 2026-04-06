@@ -7,8 +7,8 @@ import java.util.Set;
 
 public class Manager  extends Dipendente {
     private final String ruolo = "Manager";
-
-
+    private final Integer surplus = 1500;
+    private final Double moltiplicatore = 1.5;
     public Manager(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
         super(nome,cognome,matricola,dataassunzione,ral,competenzepossedute);
         super.setRuolo(ruolo);
@@ -21,8 +21,8 @@ public class Manager  extends Dipendente {
 
 
     @Override
-    public Float calcolaStipendio() {
+    public double calcolaStipendio() {
        // come ottengo il bonus semplicemente mi prendo l'id del progetto a cui lavora mi faccio un metodo stastico che mi da il bonus del progetto passato un ip
-        return super.getRal() + super.getBonusprogetto() + super.calcolaAnzianita();
+        return super.getRal() + moltiplicatore* super.getBonusprogetto() + super.calcolaAnzianita()*surplus;
     }
 }
