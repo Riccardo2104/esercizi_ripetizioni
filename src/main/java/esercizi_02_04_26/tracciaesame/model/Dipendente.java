@@ -3,6 +3,9 @@ package esercizi_02_04_26.tracciaesame.model;
 
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 
 public abstract class Dipendente {
@@ -17,6 +20,7 @@ public abstract class Dipendente {
     private long anniServizio;
     private Progetto progetto;
     private Double bonusprogetto;
+    private List<Progetto> proggettiacuipartecipa;
 
     public Dipendente(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
         this.nome = nome;
@@ -29,6 +33,7 @@ public abstract class Dipendente {
         this.anniServizio = this.calcolaAnzianita();
         this.progetto = null;
         this.bonusprogetto = null;
+        this.proggettiacuipartecipa = new ArrayList<>();
         this.ruolo = null;
     }
 
@@ -65,6 +70,10 @@ public abstract class Dipendente {
         return competenzepossedute;
     }
 
+    public List<Progetto> getProggettiacuipartecipa() {
+        return proggettiacuipartecipa;
+    }
+
     //setter
     public void setNome(String nome) {
         this.nome = nome;
@@ -80,6 +89,17 @@ public abstract class Dipendente {
 
     protected  void setRuolo(String ruolo) {
         this.ruolo = ruolo;
+    }
+
+
+    public Boolean aggiungiaiprogettiacuipartecipa(Progetto progetto) {
+        if(!proggettiacuipartecipa.contains(progetto)) {
+            proggettiacuipartecipa.add(progetto);
+            return  true;
+        }
+
+        return null;
+
     }
 
     @Override

@@ -20,9 +20,16 @@ public class Manager  extends Dipendente {
     // come ottengo il
 
 
+
+    /*se partecipa a piuù progetti ciò significa ogni dipendente avra un arraylist di progetti
+    * e
+    *
+    * */
+
     @Override
     public double calcolaStipendio() {
-       // come ottengo il bonus semplicemente mi prendo l'id del progetto a cui lavora mi faccio un metodo stastico che mi da il bonus del progetto passato un ip
+
+        // come ottengo il bonus semplicemente mi prendo l'id del progetto a cui lavora mi faccio un metodo stastico che mi da il bonus del progetto passato un ip
         return super.getRal() + moltiplicatore*super.getBonusprogetto() + super.calcolaAnzianita()*surplus;
     }
 }

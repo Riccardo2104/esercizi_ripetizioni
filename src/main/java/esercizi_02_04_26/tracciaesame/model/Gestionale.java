@@ -67,11 +67,10 @@ public class Gestionale {
         if(competenzeDipendentePossedute.containsAll(progetto.getCompetenzerichieste())) {
 
             Double percentualeBonusProgettoDaassegnare = progetto.getPercentualebonus();
-            dipendente.setProgetto(progetto);
-            dipendente.setBonusprogetto(progetto.getPercentualebonus());
-
+//            dipendente.setProgetto(progetto);
+//            dipendente.setBonusprogetto(progetto.getPercentualebonus());
+              dipendente.aggiungiaiprogettiacuipartecipa(progetto);
             return true;
-
 
         }
 

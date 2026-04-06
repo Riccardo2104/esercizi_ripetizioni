@@ -110,8 +110,8 @@ public class Main {
                 dataAssunzioneSviluppatore,23000f,competenzeprogetto);
 
         gestionale.assegnaProgetto(sviluppatore,progetto);
-
-        System.out.print(sviluppatore.calcolaStipendio());
+        gestionale.assegnaProgetto(sviluppatore,progetto2);
+        System.out.print(sviluppatore.getProggettiacuipartecipa());
 
     }
 
