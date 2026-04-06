@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.regex.Pattern;
 
 public class Main {
 
@@ -93,7 +92,7 @@ public class Main {
                 "\\Basi di programmazione in Java e strumenti per lo sviluppo\\esercizi_autodidatta" +
                 "\\esercizi_ripetizioni" +
                 "\\src\\main\\java\\esercizi_02_04_26\\tracciaesame\\model\\output.txt"))) {
-            for(Progetto progettonesimo: gestionale.getProgetti()) {
+            for(Progetto progettonesimo: gestionale.getProgettiGestionale()) {
                 writer.write(stringformatter.formattaStringa(progettonesimo) + "\n");
             }
         } catch (IOException e) {
@@ -113,6 +112,13 @@ public class Main {
         gestionale.assegnaProgetto(sviluppatore,progetto2);
 //        System.out.print(sviluppatore.getProggettiacuipartecipa());
         System.out.print(mario.getProggettiacuipartecipa());
+
+        Progetto progettonotnelgestionael = new Progetto(999,datainizioprogetto,datafineprogetto,competenzeprogetto,
+                4000f,20.0);
+//
+        System.out.print(gestionale.assegnaProgetto(mario,progettonotnelgestionael));
+
+
 
     }
 
