@@ -1,16 +1,20 @@
 package esercizi_02_04_26.esercizioRistorante.model;
 
+import java.time.LocalDate;
+
 public class Risultato {
     private final double entrate;
     private final Double uscite;
     private final Double mance;
+    private final LocalDate data;
     private int risultato;
 
 
-    public Risultato(Double entrate, Double uscite, Double mance) {
+    public Risultato(Double entrate, Double uscite, Double mance, LocalDate data) {
             this.entrate = entrate;
             this.uscite = uscite;
             this.mance = mance;
+            this.data = data;
             this.risultato = (int) (this.entrate - this.uscite);
     }
 
@@ -22,6 +26,10 @@ public class Risultato {
         return uscite;
     }
 
+
+    public Double getMance() {
+        return mance;
+    }
 
     @Override
     public String toString() {

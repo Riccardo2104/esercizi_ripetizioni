@@ -86,7 +86,7 @@ public class Gestionale {
         return progetti;
     }
 
-    public boolean generatxtreport() throws RuntimeException, IOException {
+    public boolean generatxtreport() throws  IOException {
         Stringformatter stringformatter = new Stringformatter();
         BufferedWriter writer = new BufferedWriter(new FileWriter("C:\\Users\\Riccardo\\Documents\\ITS" +
                 "\\Basi di programmazione in Java e strumenti per lo sviluppo\\esercizi_autodidatta" +

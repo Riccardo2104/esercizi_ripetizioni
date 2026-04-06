@@ -1,5 +1,7 @@
 package esercizi_02_04_26.esercizioRistorante.model;
 
+import java.time.LocalDate;
+
 public class Dipendenti {
     /*
     * ho scelto di non usare la classe astratta perchè lui ha detto o sei uno chef o un cameriere o un dipendente
@@ -33,6 +35,10 @@ public class Dipendenti {
 
     /*praticamente io devo renderli final nella creazione del costruttore*/
 
+    public  Object getGudagnogiorno(LocalDate data) {
+        return  "Data: " +data.toString() + " Importo" + "\s" + getPagafissa();
+    }
+
     // getter and setter
 
 
@@ -44,9 +50,14 @@ public class Dipendenti {
         return pagafissa;
     }
 
-    public void setPrendeMancia(Boolean prendeMancia) {
+
+
+    protected void setPrendeMancia(Boolean prendeMancia) {
         this.prendeMancia = prendeMancia;
     }
+
+
+
 
     @Override
     public String toString() {
