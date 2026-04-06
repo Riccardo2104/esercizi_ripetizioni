@@ -1,0 +1,2 @@
+codiceIdentificato=113, dataInizio=2026-02-01, dataFine=2026-04-01, budgetallocato=2000.0
+codiceIdentificato=115, dataInizio=2026-02-01, dataFine=2026-04-01, budgetallocato=4000.0
