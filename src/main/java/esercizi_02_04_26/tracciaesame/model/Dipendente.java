@@ -45,7 +45,7 @@ public abstract class Dipendente {
     }
 
 
-    public Double getSommaBnusprogetti(Gestionale gestionale) {
+    public Double getSommaBnusprogetti() {
         Double sommaBnusprogetti = 0.0;
 
         if(!proggettiacuipartecipa.isEmpty() ) {
