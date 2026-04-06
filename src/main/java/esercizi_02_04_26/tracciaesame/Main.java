@@ -44,9 +44,9 @@ public class Main {
         LocalDate datafineprogetto = LocalDate.of(2026,04,01);
 //
         Progetto progetto = new Progetto(113,datainizioprogetto,datafineprogetto,competenzeprogetto,
-                2000f,10);
+                2000f,10.0);
         Progetto progetto2 = new Progetto(115,datainizioprogetto,datafineprogetto,competenzeprogetto,
-                4000f,20);
+                4000f,20.0);
 //        Competenza competenza1 = new Competenza("Contabilità",456);
 //
 //        Set<Competenza> competenzemario = new HashSet<>();
