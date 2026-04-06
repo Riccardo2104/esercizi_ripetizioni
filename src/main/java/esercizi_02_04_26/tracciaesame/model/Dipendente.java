@@ -15,7 +15,7 @@ public abstract class Dipendente {
     private LocalDate dataassunzione;
     private Float ral;
     private Float stipendio;
-    private Set<Competenza>  competenzepossedute;
+    private Set<Competenza> competenzepossedute;
     private long anniServizio;
     private List<Progetto> proggettiacuipartecipa;
 
@@ -25,7 +25,7 @@ public abstract class Dipendente {
         this.matricola = matricola;
         this.dataassunzione = dataassunzione;
         this.ral = ral;
-        this.stipendio = ral/13;
+        this.stipendio = ral / 13;
         this.competenzepossedute = competenzepossedute;
         this.anniServizio = this.calcolaAnzianita();
         this.proggettiacuipartecipa = new ArrayList<>();
@@ -33,10 +33,7 @@ public abstract class Dipendente {
     }
 
 
-
     public abstract double calcolaStipendio();
-
-
 
 
     public int calcolaAnzianita() {
@@ -48,22 +45,16 @@ public abstract class Dipendente {
     public Double getSommaBnusprogetti() {
         Double sommaBnusprogetti = 0.0;
 
-        if(!proggettiacuipartecipa.isEmpty() ) {
-            for(Progetto p  :this.getProggettiacuipartecipa()) {
+        if (!proggettiacuipartecipa.isEmpty()) {
+            for (Progetto p : this.getProggettiacuipartecipa()) {
                 sommaBnusprogetti = sommaBnusprogetti + p.getPercentualebonus();
             }
-            return  sommaBnusprogetti;
+            return sommaBnusprogetti;
         }
-        return  null;
+        return null;
     }
-
-
 
     //getter and setter
-
-    public String getNome() {
-        return nome;
-    }
 
     public Float getRal() {
         return ral;
@@ -78,19 +69,16 @@ public abstract class Dipendente {
     }
 
     //setter
-    public void setNome(String nome) {
-        this.nome = nome;
-    }
 
-    protected  void setRuolo(String ruolo) {
+    protected void setRuolo(String ruolo) {
         this.ruolo = ruolo;
     }
 
 
     public Boolean aggiungiaiprogettiacuipartecipa(Progetto progetto) {
-        if(!proggettiacuipartecipa.contains(progetto)) {
+        if (!proggettiacuipartecipa.contains(progetto)) {
             proggettiacuipartecipa.add(progetto);
-            return  true;
+            return true;
         }
 
         return null;
