@@ -6,11 +6,12 @@ import java.time.LocalDate;
 import java.util.Set;
 
 public class Manager  extends Dipendente {
+    private final String ruolo = "Manager";
 
 
-
-    public Manager(String ruolo, String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
-        super(ruolo, nome,cognome,matricola,dataassunzione,ral,competenzepossedute);
+    public Manager(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
+        super(nome,cognome,matricola,dataassunzione,ral,competenzepossedute);
+        super.setRuolo(ruolo);
 
     }
 

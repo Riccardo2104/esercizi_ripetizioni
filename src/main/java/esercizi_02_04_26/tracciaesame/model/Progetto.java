@@ -15,6 +15,8 @@ public class Progetto {
     private Integer percentualebonus;
 
     public Progetto(Integer codiceIdentificato, LocalDate dataInizio, LocalDate dataFine, Set<Competenza> competenzerichieste, Float budgetallocato, Integer percentualebonus) {
+
+
         this.codiceIdentificato = codiceIdentificato;
         this.dataInizio = dataInizio;
         this.dataFine = dataFine;
@@ -67,4 +69,14 @@ public class Progetto {
         return Objects.equals(codiceIdentificato, progetto.codiceIdentificato);
     }
 
+
+    @Override
+    public String toString() {
+        return "Progetto{" +
+                "codiceIdentificato=" + codiceIdentificato +
+                ", dataInizio=" + dataInizio +
+                ", dataFine=" + dataFine +
+                ", budgetallocato=" + budgetallocato +
+                '}';
+    }
 }

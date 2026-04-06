@@ -21,8 +21,7 @@ public abstract class Dipendente {
     private Progetto progetto;
     private Integer bonusprogetto;
 
-    public Dipendente(String ruolo, String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
-        this.ruolo = ruolo;
+    public Dipendente(String nome, String cognome, int matricola, LocalDate dataassunzione, Float ral, Set<Competenza> competenzepossedute) {
         this.nome = nome;
         this.cognome = cognome;
         this.matricola = matricola;
@@ -33,17 +32,19 @@ public abstract class Dipendente {
         this.anniServizio = this.calcolaAnzianita();
         this.progetto = null;
         this.bonusprogetto = null;
-
+        this.ruolo = null;
     }
-
 
 
 
     public abstract Float calcolaStipendio();
 
-    public long calcolaAnzianita() {
+
+
+
+    public int calcolaAnzianita() {
         LocalDate oggi = Gestionale.dataoggi;
-        return  anniServizio =  dataassunzione.until(oggi, ChronoUnit.YEARS);
+        return Math.toIntExact(anniServizio = dataassunzione.until(oggi, ChronoUnit.YEARS));
     }
 
 
@@ -72,12 +73,17 @@ public abstract class Dipendente {
         this.nome = nome;
     }
 
-
-
-    public void setRuolo(String ruolo) {
-        this.ruolo = ruolo;
+    public void setBonusprogetto(Integer bonusprogetto) {
+        this.bonusprogetto = bonusprogetto;
     }
 
+    public void setProgetto(Progetto progetto) {
+        this.progetto = progetto;
+    }
+
+    protected  void setRuolo(String ruolo) {
+        this.ruolo = ruolo;
+    }
 
     @Override
     public String toString() {
