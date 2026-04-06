@@ -111,7 +111,8 @@ public class Main {
 
         gestionale.assegnaProgetto(sviluppatore,progetto);
         gestionale.assegnaProgetto(sviluppatore,progetto2);
-        System.out.print(sviluppatore.getProggettiacuipartecipa());
+//        System.out.print(sviluppatore.getProggettiacuipartecipa());
+        System.out.print(mario.getProggettiacuipartecipa());
 
     }
 

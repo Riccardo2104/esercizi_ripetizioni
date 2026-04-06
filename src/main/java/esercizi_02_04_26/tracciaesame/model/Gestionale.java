@@ -64,7 +64,7 @@ public class Gestionale {
         * se si  gli assegno l'id del progetto e il bonus del progetto usando i getter di progetto
         * */
         Set <Competenza> competenzeDipendentePossedute = dipendente.getCompetenzepossedute();
-        if(competenzeDipendentePossedute.containsAll(progetto.getCompetenzerichieste())) {
+        if(competenzeDipendentePossedute.containsAll(progetto.getCompetenzerichieste()) && this.getProgetti().contains(progetto)) {
 
             Double percentualeBonusProgettoDaassegnare = progetto.getPercentualebonus();
 //            dipendente.setProgetto(progetto);

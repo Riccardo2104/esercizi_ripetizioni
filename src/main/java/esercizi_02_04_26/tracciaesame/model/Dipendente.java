@@ -45,10 +45,10 @@ public abstract class Dipendente {
     }
 
 
-    public Double getSommaBnusprogetti() {
+    public Double getSommaBnusprogetti(Gestionale gestionale) {
         Double sommaBnusprogetti = 0.0;
 
-        if(!proggettiacuipartecipa.isEmpty()) {
+        if(!proggettiacuipartecipa.isEmpty() ) {
             for(Progetto p  :this.getProggettiacuipartecipa()) {
                 sommaBnusprogetti = sommaBnusprogetti + p.getPercentualebonus();
             }
